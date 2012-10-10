@@ -54,7 +54,7 @@
 		}
 		.box {
 			width:100px;
-			float:left;
+			float:right;
 			padding:10px;
 			color:#fff;
 			height:50px;
@@ -62,7 +62,8 @@
 			border:3px solid #4889a3;
 		}
 		.box1 {
-			background:#1E3F6E;
+			/*background:#1E3F6E;*/
+			background:#000000;
 		}
 		.box2 {
 			background:#1E5B6E;
