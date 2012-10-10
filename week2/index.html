@@ -10,11 +10,20 @@
 		
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<<<<<<< HEAD
 		
 	</head>
 
 	<body>
 	  <!-- This is the top bit with the image. 
+=======
+	</head>
+
+	<body>
+	<style>
+	
+	</style>		<!-- This is the top bit with the image. 
+>>>>>>> 8865913693746c227d84e5de89407297f0367e59
 		I wonder why there's no image tag here? -->
 		<div class="whitebit"></div>
 
@@ -37,6 +46,20 @@
 		
 		<!-- Let's put in a timer here -->
 		<script type="text/javascript">
+		var count = 30;
+		var counter = setInterval(timer, 1000); 
+		
+		function timer() {
+		    count = count - 1;
+		    if (count <= 0) {
+		        clearInterval(counter);
+		        alert("Boom!");
+		        document.getElementById('button').style.visibility = 'hidden';
+		        return;
+		    }
+		
+		    document.getElementById("timer").innerHTML = count + " secs";
+		}
 
 		var count = 30;
 		var counter = setInterval(timer, 1000); 
@@ -57,6 +80,7 @@
 		
 		<!-- Let's put in the geolocation stuff here -->
 		<script type="text/javascript">
+<<<<<<< HEAD
 		
 		//Run code when webpage first loads!
 		$(function () {
@@ -78,6 +102,28 @@
 		    alert(position.coords.longitude);
 		}
 
+=======
+		$(function () {
+    $("#button").click(function () {
+        getLocation();
+    });
+});
+
+function getLocation() {
+    if (navigator.geolocation) {
+       navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+    $(".box1").html(position.coords.latitude);
+    $(".box2").html(position.coords.longitude);
+} 
+
+getLocation();
+>>>>>>> 8865913693746c227d84e5de89407297f0367e59
 		</script>
 	</body>
 </html>
