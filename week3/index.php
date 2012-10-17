@@ -22,8 +22,11 @@
 		?>
 		
 		<table>
-		<!-- This is where we'll put all our content -->
+		<?php
+		include("config.php");
+		$query = "";
 		
+<<<<<<< HEAD
 		<?php
 		
 		include("config.php");
@@ -31,13 +34,20 @@
 		
 		// Don’t be intimidated by the following lines. You can pretty much
 		// always copy and paste these because they’re sort of like
+=======
+		// Donâ€™t be intimidated by the following lines. You can pretty much
+		// always copy and paste these because theyâ€™re sort of like
+>>>>>>> b3dacea09ff430bf4988b594f3098ed8216df35c
 		// functional bits that never change.
 		$result = mysql_query($query);
 		while ($row = mysql_fetch_assoc($result)) {
 			echo "<p>".$row["title"]."</p>";
 		}
 		?>
+<<<<<<< HEAD
 				
+=======
+>>>>>>> b3dacea09ff430bf4988b594f3098ed8216df35c
 		</table>
 		
 		<script type="text/javascript">
