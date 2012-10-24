@@ -12,10 +12,23 @@
 
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="appicon.png" />
-	<link rel="apple-touch-startup-image" href="upstart.png">
+	<link rel="apple-touch-startup-image" href="startup.png">
 	
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
+	
+	<script>
+	
+	$(document).ready(function() {
+		$("div.nav-glyphish-example ul li:nth-child(1)").addClass("ui-btn-active");
+		$("div.nav-glyphish-example ul li:nth-child(2)").removeClass("ui-btn-active");
+		$("div.nav-glyphish-example ul li:nth-child(3)").removeClass("ui-btn-active");
+		$("div.nav-glyphish-example ul li:nth-child(4)").removeClass("ui-btn-active");
+		;
+		
+	});
+	
+	</script>
 
 </head> 
 
@@ -39,16 +52,7 @@
 		<p><a href="#popup" data-role="button" data-rel="dialog" data-transition="pop">Show page "popup" (as a dialog)</a></p>
 	</div><!-- /content -->
 	
-	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-		<div data-role="navbar" class="nav-glyphish-example" data-grid="c">
-			<ul>
-				<li><a href="index.php" id="home" data-icon="custom" class="ui-btn-active">Home</a></li>
-				<li><a href="login.php" id="key" data-icon="custom">Login</a></li>
-				<li><a href="filter.php" id="beer" data-icon="custom">Filter</a></li>
-				<li><a href="#" id="skull" data-icon="custom">Settings</a></li>
-			</ul>
-		</div>
-	</div>
+	<?php include("footer.php"); ?>
 </div>
 	
 </div><!-- /page one -->
@@ -69,17 +73,7 @@
 		
 	</div><!-- /content -->
 	
-	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-		<div data-role="navbar" class="nav-glyphish-example" data-grid="c">
-		
-		<ul>
-			<li><a href="index.php" id="home" data-icon="custom">Home</a></li>
-			<li><a href="login.php" id="key" data-icon="custom" class="ui-btn-active">Login</a></li>
-			<li><a href="filter.php" id="beer" data-icon="custom">Filter</a></li>
-			<li><a href="#" id="skull" data-icon="custom">Settings</a></li>
-		</ul>
-		</div>
-	</div>
+	<?php include("footer.php"); ?>
 </div>
 </div><!-- /page two -->
 
@@ -97,16 +91,7 @@
 		<p><a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back">Back to page "one"</a></p>	
 	</div><!-- /content -->
 	
-	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-		<div data-role="navbar" class="nav-glyphish-example" data-grid="c">
-		<ul>
-			<li><a href="index.php" id="home" data-icon="custom">Home</a></li>
-			<li><a href="login.php" id="key" data-icon="custom">Login</a></li>
-			<li><a href="filter.php" id="beer" data-icon="custom" class="ui-btn-active">Filter</a></li>
-			<li><a href="#" id="skull" data-icon="custom">Settings</a></li>
-		</ul>
-		</div>
-	</div>
+	<?php include("footer.php"); ?>
 </div>
 </div><!-- /page popup -->
 

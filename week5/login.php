@@ -29,7 +29,14 @@
 
 	<div data-role="content">
 	
-	<p>The form should go here</p>
+	<form action="enter.php" method="post">
+	<label for="foo">Username:</label>
+	<input type="text" name="username" id="foo">
+	<label for="bar">Password:</label>
+	<input type="password" name="password" id="bar">
+        <input type="submit" value="Login">
+</form>
+
 		<div data-role="fieldcontain">
 			
 		</div>	
@@ -40,16 +47,8 @@
 	</div>	
 	</div><!-- /content -->
 
-    <div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-		<div data-role="navbar" class="nav-glyphish-example" data-grid="c">
-		<ul>
-			<li><a href="index.php" id="home" data-icon="custom">Home</a></li>
-			<li><a href="login.php" id="key" data-icon="custom" class="ui-btn-active">Login</a></li>
-			<li><a href="filter.php" id="beer" data-icon="custom">Filter</a></li>
-			<li><a href="#" id="skull" data-icon="custom">Settings</a></li>
-		</ul>
-		</div>
-	</div>
+  <?php include("footer.php"); ?>  
+	
 	<script type="text/javascript">
 	$("#logout").hide();
 	$("#info").hide();

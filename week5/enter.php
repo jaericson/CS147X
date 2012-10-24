@@ -29,35 +29,46 @@
 
 	<div data-role="content">	
 		
-		<?php
-		// This is a hack. You should connect to a database here.
-		if ($_POST["username"] == "oi") {
-			?>
-			<script type="text/javascript">
-				// Save the username in local storage. That way you
-				// can access it later even if the user closes the app.
-				localStorage.setItem('username', '<?=$_POST["username"]?>');
-			</script>
-			<?php
-			echo "<p>Thank you, <strong>".$_POST["username"]."</strong>. You are now logged in.</p>";
-		} else {
+	
+	
+	<?php
+
+include("config.php");
+
+$username = mysql_real_escape_string($_POST['username']);
+$password = md5(mysql_real_escape_string($_POST['password']));
+
+if (!isset($username) || !isset($password)) {
+
+    echo("Sorry, nothing set!");
+    
+}
+
+elseif (empty($username) || empty($password)) {
+	
+    echo("Sorry, everything empty!");
+    
+} else {
+	
+    $result   = mysql_query("select * from users where username='$username' AND password='$password'");
+    $rowCheck = mysql_num_rows($result);
+    if ($rowCheck > 0) {
+        echo "<p>Thank you, <strong>".$_POST["username"]."</strong>. You are now logged in.</p>";
+        
+    } else {
 			echo "<p>There seems to have been an error.</p>";
 		}
-			
+}
 
-		?>
+?> 
+	
+
+
+	
+	
 	</div><!-- /content -->
 
-	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-		<div data-role="navbar" class="nav-glyphish-example" data-grid="c">
-		<ul>
-			<li><a href="index.php" id="home" data-icon="custom">Home</a></li>
-			<li><a href="login.php" id="key" data-icon="custom" class="ui-btn-active">Login</a></li>
-			<li><a href="filter.php" id="beer" data-icon="custom">Filter</a></li>
-			<li><a href="#" id="skull" data-icon="custom">Settings</a></li>
-		</ul>
-		</div>
-	</div>
+	<?php include("footer.php"); ?>
 	
 	<script type="text/javascript">
 		$("#logout").click(function() {
