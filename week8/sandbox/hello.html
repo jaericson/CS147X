@@ -27,7 +27,7 @@
 	    left: auto !important;
 		}
 		#popupPanel {
-		    width: 200px;
+		    width: 360px;
 		    border: 1px solid #000;
 		    border-right: none;
 		    background: rgba(0,0,0,.5);
@@ -64,13 +64,28 @@
 		
 		$(document).unbind('pageshow');
 		$(document).bind('pageshow', function(event){ 
+			//Don't record in history!!
+			$("#popupPanel").popup({history: false, transition:"fade"});
+			
+			
 			$( "#popupPanel" ).on({
 		    popupbeforeposition: function() {
 		        var h = $( window ).height();
+		        var w = $(window).width();
 		
 		        $( "#popupPanel" ).css( "height", h );
+		        $( "#popupPanel" ).css( "width", w );
 		    }
 			});
+			
+			
+			$("#popupPanel").popup( "open" );
+			
+			$(".close").click(function() {	    
+				$("#popupPanel2").popup('close');
+			});
+			
+			
 		});
 		</script> 
 
@@ -82,9 +97,19 @@
 	</div>
 	<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
 	
-	    <button data-theme="a" data-icon="back" data-mini="true">Back</button>
+	    <!--<button data-theme="a" data-icon="back" data-mini="true">Back</button>
 	    <button data-theme="a" data-icon="grid" data-mini="true">Menu</button>
-	    <button data-theme="a" data-icon="search" data-mini="true">Search</button>
+	    <button data-theme="a" data-icon="search" data-mini="true">Search</button>-->
+	    
+	    <img src="arrow.png" style="-webkit-transform:rotate(Xdeg);-webkit-transform: scaleX(X);position:absolute;top:50px;right:10px;" />
+
+<div id="helper">
+<p>Click here to see more options</p>
+</div>
+
+<a href="#" data-rel="back">Close</a>
+
+
 		 
 	</div>
 	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">

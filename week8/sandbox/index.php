@@ -1,3 +1,16 @@
+<!--<?php
+include 'Mobile_Detect.php';
+$detect = new Mobile_Detect();
+
+if (!$detect->isMobile()) {
+	//Redirect to mobile.php
+	header("Location: mobiletest/iphone.php?url=stanford.edu/~jericson/cgi-bin/occupycongress");
+	
+}
+?>-->
+
+
+
 <!DOCTYPE html> 
 <html>
 
